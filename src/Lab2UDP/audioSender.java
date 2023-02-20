@@ -22,7 +22,7 @@ public class audioSender {
         //IP ADDRESS to send to
         InetAddress clientIP = null;
         try {
-            clientIP = InetAddress.getByName("localhost");
+            clientIP = InetAddress.getByName("192.168.1.67");
         } catch (UnknownHostException e) {
             System.out.println("ERROR: Lab2UDP.TextSender: Could not find client IP");
             e.printStackTrace();
