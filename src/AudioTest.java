@@ -33,7 +33,7 @@ public class AudioTest {
         for (int i = 0; i < Math.ceil(recordTime / 0.032); i++) {
             byte[] block = recorder.getBlock();
                 voiceVector.add(block);
-//                System.out.println(block);
+//                System.out.println(block); // this was used for debugging
         }
 
         //Close audio input
@@ -47,13 +47,13 @@ public class AudioTest {
 
         // simulates the effect of packet loss randomly this is 50% chance because choosing between 1 number out of 2
         // if wanted 10% could choose 1/10
-        for(int i = 0; i < voiceVector.size(); i++) {
-            Random random = new Random();
-            int randomInt = random.nextInt(2);
-            if (randomInt == 1) {
-                voiceVector.set(i, new byte[0]);
-            }
-        }
+//        for(int i = 0; i < voiceVector.size(); i++) {
+//            Random random = new Random();
+//            int randomInt = random.nextInt(2);
+//            if (randomInt == 1) {
+//                voiceVector.set(i, new byte[0]);
+//            }
+//        }
 
         //Iterate through voiceVector and play out each audio block
         System.out.println("Playing Audio...");
